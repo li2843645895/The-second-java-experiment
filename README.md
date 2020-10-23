@@ -26,7 +26,198 @@ java任务仓库
   则不能进入选课阶段，若登录成功，则开始选课，接着设计单独查询老师及课程信息，若选择查询，会出现是否选择已查询老师课程，若选择是，
   则选课成功，打印选课单。若选择否，则打印全部选课信息，学生开始选课，选课成功，打印选课单。
 ## 三·核心方法
+###  在student类中：
+	student(int year){
+		super(year);
+    此模块用来创造子类构造方法，用来调用父类people的构造方法
+    void classselect() {
+		Login login = new Login();
+		//创建列表，将学生信息存在其中
+		String name[] = { "小明", "张飞", "刘翔", "李俊", "张华", "景驰", "泰宇", "刘志", "欧阳艄公", "李回回" };
+		String sex[] = { "男", "女", "男", "女", "男", "男", "女", "男", "女", "男" };
+		//用户输入其标编号，若编号存在，则输入密码，若不存在，则重新输入，可以无限次的输入
+		int time = 0;
+		while (time == 0) {
+			System.out.println("请输入您的编号（编号为大于等于零的数字）：");
+			Scanner readerone = new Scanner(System.in);
+			this.number = readerone.nextInt();
+			if (number < 0 || number >= login.studentaccount.length) {
+				System.out.println("不能找到该编号信息学生,请重新输入!");
+				time = 0;
+			} else if (number == login.studentaccount[number]) {
+				time = 1;
+			}
+		}
+		//当用户编号输入正确是，开始输入密码，记录次数
+		int time1 = 0;
+		while (time1 == 0) {
+			System.out.println("请输入您的密码(由数字组成)：");
+			Scanner readertwo = new Scanner(System.in);
+			int password = readertwo.nextInt();
+			if (password == login.password[number]) {
+				System.out.println("登录成功，成功进入学生选课系统");
+				//显示学生信息
+				switch (number) {
+				case 0:
+					System.out.println("你好：" + name[number]);
+					System.out.println("您的性别是：" + sex[number]);
+					System.out.println("您的编号是：" + number);
+					break;
+				case 1:
+					System.out.println("你好：：" + name[number]);
+					System.out.println("您的性别是：" + sex[number]);
+					System.out.println("您的编号是：" + number);
+					break;
+				case 2:
+					System.out.println("你好：" + name[number]);
+					System.out.println("您的性别是：" + sex[number]);
+					System.out.println("编号：" + number);
+					break;
+				case 3:
+					System.out.println("你好：" + name[number]);
+					System.out.println("您的性别是：" + sex[number]);
+					System.out.println("您的编号是：" + number);
+					break;
+				case 4:
+					System.out.println("你好：" + name[number]);
+					System.out.println("您的性别是：" + sex[number]);
+					System.out.println("您的编号是：" + number);
+					break;
+				case 5:
+					System.out.println("你好：" + name[number]);
+					System.out.println("您的性别是：" + sex[number]);
+					System.out.println("您的编号是：" + number);
+					break;
+				case 6:
+					System.out.println("你好：" + name[number]);
+					System.out.println("您的性别是：" + sex[number]);
+					System.out.println("您的编号是：" + number);
+					break;
+				case 7:
+					System.out.println("你好：" + name[number]);
+					System.out.println("您的性别是：" + sex[number]);
+					System.out.println("您的编号是：" + number);
+					break;
+				case 8:
+					System.out.println("你好：" + name[number]);
+					System.out.println("您的性别是：" + sex[number]);
+					System.out.println("您的编号是：" + number);
+					break;
+				case 9:
+					System.out.println("你好：" + name[number]);
+					System.out.println("您的性别是：" + sex[number]);
+					System.out.println("您的编号是：" + number);
+					break;
+				default:
+					System.out.print("输入错误");
 
+				};
+				time1 = 1;
+			} else {
+			//当次数超过五次，则不能再输入
+				if(stop >= 5) {
+					break;};
+				System.out.println("密码错误请重新输入");
+				time1 = 0;
+				stop++;
+			}
+		}
+		
+	};
+  此模块用来让用户输入个人编号（可以输入无限次），同时让用户输入密码，若输入错误次数超过五次，则不可以再输入。若登录成功，则会打印出学生个人信息 
+  
+	void getclass() {
+		teacher T = new teacher();
+		Scanner readerthree = new Scanner(System.in);
+		 int studentclass = readerthree.nextInt();
+		 super.classselect();
+		 System.out.println("你选择的是"+T.name[studentclass]+"老师的"+T.courses[studentclass]+"课程");
+		 System.out.println("上课地点在"+T.place[studentclass]);
+		 System.out.println("上课时间为"+T.classTime[studentclass]);
+     此构造方法用来打印学生所选课程的具体信息
+  ###  在teacher类中：
+    void selectclass() {
+		//调用父类重写的toString方法
+		System.out.println(toString());
+		//输出老师编号
+		for (int i = 0; i < teanum.length; i++) {
+			System.out.print(teanum[i] + "\t" + "\t");
+		}
+		System.out.println();
+		//输出老师姓名
+		for (int i = 0; i < name.length; i++) {
+			System.out.print(name[i] + "\t" + "\t");
+		}
+		;
+		System.out.println();
+		//输出老师性别
+		for (int i = 0; i < sex.length; i++) {
+			System.out.print(sex[i] + "\t" + "\t");
+		}
+		;
+		System.out.println();
+		//输出老师开授课程信息
+		for (int i = 0; i < courses.length; i++) {
+			System.out.print(courses[i] + "\t" + "\t");
+		}
+		;
+		System.out.println();
+		//输出老师开设课程的授课地点
+		for (int i = 0; i < place.length; i++) {
+			System.out.print(place[i] + "\t" + "\t");
+		}
+		;
+		System.out.println();
+		//输出老师开设课程的时间
+		for (int i = 0; i < classTime.length; i++) {
+			System.out.print(classTime[i] + "\t" + "\t");
+		}
+		;
+		System.out.println();
+	};
+  此模块用来列出所有老师信息及其开设课程信息
+   ###  在teacher类中：
+     //当密码输入次数超过五次是，则系统需要退出，不打印出其他信息
+		if(C.stop >=5) {
+			System.out.println("警告：密码输入次数达到上限！！！！！！！！可能有非法登录————————请明天在登陆系统选课！！！");
+		}else {
+			//用户选择是否需要单独查询老师信息
+		System.out.println("是否需要单独查询老师开课信息(点0为单独查询老师信息，点1为查询全部老师开课信息)");
+		Scanner readerfour = new Scanner(System.in);
+		int findinf = readerfour.nextInt();
+		//用户选择需要查询的老师的信息，若不需要，则打印老师信息，并让用户选择需要选修的课程
+		if (findinf == 0) {
+			System.out.println("请输入老师编号：");
+			B.classselect();
+			//用户选择是否选择查询老师的课程
+			System.out.println("是否选择该老师课程(1为是，0为否)");
+			Scanner readerfive = new Scanner(System.in);
+			int selectcourse = readerfive.nextInt();
+			//是则选课成功，打印已选择课程的信息
+			if (selectcourse == 1) {
+				teacher T = new teacher();
+				System.out.println(
+						"-------------------------------------------选课成功！-----------------------------------------------");
+				System.out.println("你选择的是" + T.name[B.number] + "老师的" + T.courses[B.number] + "课程");
+				System.out.println("上课地点在" + T.place[B.number]);
+			} else if (selectcourse == 0){
+				//否则打印各个老师开课的信息，并选择想选择老师的编号
+				B.selectclass();
+				System.out.println("请输入您想选修的课程老师编号：");
+				C.getclass();
+			}
+			;
+		} else if (findinf == 1) {
+			System.out.println("以下是各个老师及所开课程信息:");
+			B.selectclass();
+			System.out.println("请输入您想选修的课程老师编号：");
+			C.getclass();
+		}
+		;
+	}
+	}
+  此模块用来判断是否用户输入密码次数超过五次，若超过，则退出系统；若登录成功，则学生开始选课，学生可以通过单独查询老师信息选课或者观看全部选课列表选课。
+## 四.流程图
 ## 四·实验结果
 
 ## 五·实验感想
