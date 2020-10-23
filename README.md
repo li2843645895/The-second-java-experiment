@@ -133,8 +133,8 @@ java任务仓库
 		 super.classselect();
 		 System.out.println("你选择的是"+T.name[studentclass]+"老师的"+T.courses[studentclass]+"课程");
 		 System.out.println("上课地点在"+T.place[studentclass]);
-		 System.out.println("上课时间为"+T.classTime[studentclass]);
-     此构造方法用来打印学生所选课程的具体信息
+		 System.out.println("上课时间为"+T.classTime[studentclass]);  
+  此构造方法用来打印学生所选课程的具体信息
   ###  在teacher类中：
     void selectclass() {
 		//调用父类重写的toString方法
@@ -220,11 +220,11 @@ java任务仓库
 ## 四.流程图
 https://github.com/li2843645895/java-/blob/main/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E5%AD%A6%E7%94%9F%E9%80%89%E8%AF%BE%E7%B3%BB%E7%BB%9F.png
 ## 五·实验结果
-当登录成功时，选择单独查询老师信息，并选择已查询老师所开课程
+当登录成功时，选择单独查询老师信息，并选择已查询老师所开课程  
 https://github.com/li2843645895/java-/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201024013814.png
-当登录成功时，选择单独查询老师信息，不选择已查询老师所开课程
+当登录成功时，选择单独查询老师信息，不选择已查询老师所开课程  
 https://github.com/li2843645895/java-/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201024013828.png
-当登录成功时，不选择单独查询老师信息，开始选课
+当登录成功时，不选择单独查询老师信息，开始选课  
 https://github.com/li2843645895/java-/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201024013835.png
 ## 六·实验感想
 本次实验我深刻体会到了分析系统需求，从学生选课角度了解系统中的实体及其关系，学会定义类中的属性及其方法；掌握面对对象的类的设计方法（属性，方法），
